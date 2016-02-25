@@ -1,0 +1,23 @@
+{
+  "ecmaVersion": 6,
+  "plugins": {
+    "outline": {
+      
+    },
+    "node": {
+      
+    },
+    "dojotoolkit1.10": {
+      
+    },
+    "bootstrap": {
+      
+    }
+  },
+  "libs": [
+    "ecma5",
+    "ecma6",
+    "browser",
+    "jquery"
+  ]
+}

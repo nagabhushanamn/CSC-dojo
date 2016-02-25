@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css" rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- HelloWorld</div>
+	</div>
+
+	<script type="text/javascript">
+		var dojoConfig={
+				async   :true,
+				isDebug :true,
+				baseUrl :'.',
+				packages:[
+				          {name:'dojo',location:'../../dojo-release1.10.4/dojo'},
+				          {name:'dijit',location:'../../dojo-release1.10.4/dijit'},
+				          {name:'app',location:'app'}
+				          ],
+				tlmSiblingOfDojo:false          
+		};
+	</script>
+	
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript" src="../../dojo-release1.10.4/dojo/dojo.js"></script>
+	
+	<script type="text/javascript">
+	require(['app/main'])
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+
+
+ large JS appln , must use 'module' design pattern
+ 
+ 
+   2 ways to make modules
+   
+    1. using IIFE/SELF Executable func
+    
+       pros
+       ----
+       
+       --> can avoid globals
+       
+       cons
+       ----
+       
+       --> can't express dependency module.
+       
+       
+       
+    2. using AMD standard API/spec
+    
+       AMD- Async Module Definition 
+    
+    
+       to create module
+       -----------------
+       
+       define('a',['b','c'],function(){
+       // module factory...
+       });
+    
+       to load module
+       -----------------
+       require('loader-config',['a'],function(){
+       // call-back after module(s) loaded
+       });
+       
+       
+    
+    
+    
+    
+    
+    
+        

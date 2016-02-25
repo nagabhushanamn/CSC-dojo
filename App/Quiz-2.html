@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container">
+		<div class="page-header">Quiz</div>
+		<button id="btn" class="btn btn-primary">Teach</button>
+	</div>
+	
+	<script type="text/javascript">
+	
+	var trainer={
+			tnrName:'Nag',
+			doTeach:function(){
+				console.log(this.tnrName+" teaching JS");
+			}
+	};
+	
+	var btn=document.getElementById('btn');
+	
+	/* btn.addEventListener('click',function(){
+		trainer.doTeach();
+	}); */
+	
+	btn.addEventListener('click',trainer.doTeach.bind(trainer));
+	
+	</script>
+
+</body>
+</html>

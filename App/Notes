@@ -1,0 +1,149 @@
+
+
+ when page is loaded into browser ,
+ will create object-model using DOM API.
+ 
+ --------------------------------------
+ 
+ what JS-lang can do on HTML page in browser ?
+ 
+  using DOM API
+ 
+	 --> can create/retreive/update/delete HTML elements
+	 --> can change element's style
+	 --> can change element's attribute values
+	 --> can change element's text content
+	 
+	 --> can create RICH UI components for HTML pages
+	     e.g calendar , etc...
+  
+   using XHR API    
+      
+	 --> can communicate with server asynch , update results in page ( AJAX )
+    
+   using HTML-5 APIs
+   
+    --> audio/video support
+    --> canvas support ( drawing API )
+    --> Local storage
+    --> GEO location support
+    
+    --------------------------------------------------
+    
+    
+    JS using WEB-APIs ( DOM , XHR , etc.. ) can bring more
+    interactivity to HTML page.
+    
+    all WEB APIs abstract JS objects.
+    
+    ---------------------------------------------
+    
+    
+    while working with JS , we use 2 types of objects
+    
+     1. lang specific objects
+     
+        Array,Date,RegExp,....
+        
+    
+     2. host objects
+    
+        e.g Browser
+        
+        window,document,XMLHttpRequest, etc...
+    
+    
+        e.g NodeJS
+        
+        global,process , etc...
+    
+    
+    ---------------------------------------------
+    
+    
+     How JS even work in browser ?
+     
+     
+     what is JS ?
+     
+     -> single-threaded,non-blocking,concurrent,asynch lang
+    
+    
+     in browser
+     
+        1. JS-Runtime
+        
+	           Call-Stack
+	           Heap
+    
+    
+        2. Callback-Queue
+        3. Event-Loop
+        4. Web APIs ( DOM , XHR , etc..
+    
+    
+    demo with : latentflip.com/loupe/
+     ----------------------------------------------
+    
+    
+    
+    
+     plain-JS + Web APIS ==> browser-side appln
+     
+     
+     limitation/Complexities of plain-JS
+     -----------------------------------
+     
+     --> browser compatibility
+     --> performance
+     --> memory management.
+     --> code organization is too difficult.
+     --> creating complex UI components is difficult.
+
+
+    solns:
+    ------
+    
+       JS libraries + F.Ws
+       
+       JS Library
+       -------------
+       
+       jQuery
+       
+       Limitations with Jquery
+       
+       --> code organization difficult.
+       --> too low-level    
+    
+       
+       JS F.W ( MVC , MVVM )
+       ------------------------
+       
+       Backbone JS
+       Angular
+       KO
+       Ember
+       
+       DOJO  ( Toolkit )
+       ExtJS 
+       
+       etc....
+       
+       ----------------------------
+       
+       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+   
+   
+   
+    
