@@ -7,14 +7,26 @@ define([ 'dojo',
          'dijit/_TemplatedMixin',
 		 'dojo/dom-construct',
 		 'dojo/on',
-		 'dojo/text!./template/HitCounter.html' ],
+		 'dojo/text!./template/HitCounter.html',
+		 'app/HelloDialog',
+		 'dojo/dom-attr',
+		 'dijit/registry'],
 
-		function(dojo, _WidgetBase, _TemplatedMixin, domConstruct, on, template) {
+		function(dojo,
+				_WidgetBase,
+				_TemplatedMixin,
+				domConstruct,
+				on,
+				template,
+				HelloDialog,
+				domAttr,
+				registry) {
 
-			var HitCounter = dojo.declare([ _WidgetBase, _TemplatedMixin ], {
+			var HitCounter = dojo.declare('app.counter.HitCounter',[ _WidgetBase, _TemplatedMixin ], {
 
 				_count : 0,
 				// btn:null,
+				baseClass: 'counter',
 				templateString : template,
 				// Init-phase
 				constructor : function() {
@@ -54,6 +66,15 @@ define([ 'dojo',
 				doCount : function() {
 					console.log("::doCount");
 					this._count++;
+					if(this._count>10){
+					// var messageBox=new HelloDialog();
+					var messageBox=registry.byId('dialog');	
+					messageBox.set('title','Warning');
+					messageBox.set('content','Pls Dont Hit Me');
+					messageBox.show();
+					domAttr.set(this.btn,'disabled','disabled');
+					return;
+					}
 					// console.log('count:'+this._count);
 					// this.btn.innerHTML=this._count;
 					//this.countSpan.innerHTML = this._count;
