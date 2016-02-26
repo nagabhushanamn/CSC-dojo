@@ -2,13 +2,26 @@
  * http://usejsdoc.org/
  */
 
-define(['app/HelloDialog'],function(HelloDialog){
+define([ './HelloDialog','dojo/dom','dojo/on' ], function(HelloDialog,dom,on) {
+
+	var dialog = new HelloDialog();
 	
-	var dialog=new HelloDialog();
-	dialog.show();
+	// dialog.show();
+
+
+
+	var showBtn=dom.byId('showBtn');
 	
-	setTimeout(function() {
-		//dialog.hide();
-	}, 5000);
+	on(showBtn,'click',function(){
+		
+		dialog.show();
+		
+		 setTimeout(function() {
+			dialog.hide();
+		}, 5000);
+		 
+	});
+	
+	
 	
 });
