@@ -2,9 +2,17 @@
 
   1. dojo configuration and Hello Appln
   
+  ====================================================
   
   2. dojo - modules
   
      from version 1.7 , dojo follows AMD standard
+        
+   ====================================================   
      
   3. OO concepts in DOJO   
+  
+     
+     using 'dojo/_base/declare' , we can do class-based
+     programming in DOJO.
+     
