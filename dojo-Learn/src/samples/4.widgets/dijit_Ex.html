@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css" rel="stylesheet">
+<link href="app/counter/css/counter-style.css" rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- widgets</div>
+		
+		<div id="appLayout" style="width: 100%; height: 100%">
+		
+			<div data-dojo-type="dijit/layout/BorderContainer" 
+			     data-dojo-props="design:'sidebar', gutters:true, liveSplitters:true" 
+			     style="width:600px; height:400px">
+			    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">DOJO <span class="badge">see console</span></div>
+			    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 100px;">Hi, I'm leading pane</div>
+			    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:true, region:'center'">
+			    
+				  <div 
+					data-dojo-type="dijit.layout.TabContainer" style="width: 100%; height: 100%;">
+					
+					<div data-dojo-type="dijit.layout.ContentPane"
+					     data-dojo-props="title:'Tab1'">
+					     <div data-dojo-type="app.counter.HitCounter"></div>
+					     <div id="dialog" data-dojo-type="app.HelloDialog"></div>	
+					 </div>
+					 <div data-dojo-type="dijit.layout.ContentPane"
+					      data-dojo-props="title:'Tab2'">
+					      <hr/>
+					   	 <div data-dojo-type="app.loan.LoanInput"></div>
+					   	 <hr/>
+					 </div>
+					  <div data-dojo-type="dijit.layout.ContentPane"
+					       data-dojo-props="title:'Tab3'">
+					       <input data-dojo-type="dijit.Calendar">
+					 </div>
+					 <div data-dojo-type="dijit.layout.ContentPane"
+					      data-dojo-props="title:'Tab4'">
+					      <div data-dojo-type="dijit.Editor">
+					 </div>
+					
+					</div>
+				</div>
+			    
+			    </div>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	
+	
+
+	<script type="text/javascript">
+		var dojoConfig={
+				async   :true,
+				//isDebug :true,
+				baseUrl :'.',
+				packages:[
+				          {name:'dojo',location:'../../dojo-release1.10.4/dojo'},
+				          {name:'dijit',location:'../../dojo-release1.10.4/dijit'},
+				          {name:'app',location:'app'}
+				          ],
+				tlmSiblingOfDojo:false,
+				parseOnLoad:true
+		};
+	</script>
+	
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript" src="../../dojo-release1.10.4/dojo/dojo.js"></script>
+	
+	<script type="text/javascript">
+	
+	require(['app/counter/HitCounter',
+	         'app/HelloDialog',
+	         'app/loan/LoanInput',
+	         'dijit/layout/TabContainer',
+	         'dijit/layout/BorderContainer',
+			 'dijit/layout/ContentPane',
+			 'dijit/Calendar',
+			 'dijit/Editor',
+			 'dojo/domReady!'],
+		
+			function(HitCounter,HelloDialog,LoanInput,TabContainer,BorderContainer,ContentPane,Calendar){
+		
+				/* 
+				var appLayout=new TabContainer({width:'100%',height:'100%'},'appLayout');
+				appLayout.addChild(new ContentPane({title:'Tab-1',content:'A..'}));
+				appLayout.addChild(new ContentPane({title:'Tab-2',content:'B..'}));
+				appLayout.addChild(new ContentPane({title:'Tab-3',content:'C...'}));
+				
+				appLayout.startup();
+				*/
+				
+			});
+	
+	
+	</script>
+	
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
