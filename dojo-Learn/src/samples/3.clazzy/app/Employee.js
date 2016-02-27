@@ -2,7 +2,7 @@
  * http://usejsdoc.org/
  */
 
-define(['dojo',
+define(['dojo/main',
         './Person',
         'dojo/_base/lang'],
 		

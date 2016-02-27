@@ -16,3 +16,188 @@
      using 'dojo/_base/declare' , we can do class-based
      programming in DOJO.
      
+   ====================================================   
+   
+  4. DOJO UI components /  dijits / Widgets 
+  
+  
+   --> standard widgets available in 'dijit' package
+   
+   
+   creating custom dojo-widgets
+   ----------------------------
+   
+   widget ==> HTML-markup + CSS + JS + ( icons + data )
+    
+    key-notes :
+    
+    --> every widget in dojo is 'class' module.
+    --> widget class must extend 'dijit/_WidgetBase'
+    --> '_WidgetBase' class provides common properties and methods for widgets
+    
+    Widget Life-cycle/phases
+    -----------------------
+    
+    
+     a. Initialization  ( create UI comp )
+     
+     b. Service         ( get work       )
+     
+     v. Destruction     ( remove from DOM )
+     
+     -----------------------------------------------------
+  
+  
+     e.g HitCounter widget
+  
+  
+     ----------------------------------------------------
+  
+  
+     DOJO  Declarative Programming
+  
+  
+     ----------------------------------------------------
+  
+  
+  
+   ====================================================   
+   
+   5. DOJO - Event Handling
+   -----------------------
+   
+   
+   dojo/on     --> to handle both DOM/custom Events
+   dojo/aspect --> AOP programming
+   dojo/topic  --> publish/subscribe design pattern
+   
+   if any object emitting custom-event , it must extend
+   
+   dojo/Evented
+   
+   ------------------------------------------------------
+   
+   
+   
+   Aspect Oriented Programming
+   ---------------------------
+   
+   // module-1
+   
+   function f1(){
+   
+    // loging..
+    // security..
+    // start progress-bar 
+   
+   	// logic-1
+   
+     // stop progress-bar
+      
+   }
+    function f2(){
+   
+    // loging..
+    // security..
+    // start progress-bar 
+   
+   	// logic-2
+   
+     // stop progress-bar
+      
+   }
+   
+     // module-2
+   
+   function f3(){
+   
+    // loging..
+    // security..
+    // start progress-bar 
+   
+   	// logic-1
+   
+     // stop progress-bar
+      
+   }
+    function f4(){
+   
+    // loging..
+    // security..
+    // start progress-bar 
+   
+   	// logic-2
+   
+     // stop progress-bar
+      
+   }
+   
+   
+   
+   
+   
+   2 problems
+   
+   
+   --> code tangling
+   --> code scattering
+   
+   soln
+   -----
+   
+      --> AOP
+      
+      how ?
+      
+      
+      --> create cross-cutting concers / generic functionality module
+      --> create main-logic module
+      
+   
+   
+    ------------------------------------------------------
+    
+    
+    ----------------------------------------------------------------------
+    
+    dojo/on
+    
+       on(target,'event',listener)
+       
+       target 
+       
+         --> DOM element
+         --> Evented object
+    
+    
+    dojo/aspect
+    
+    
+        --> to apply before | after | around advice on target's method
+    
+    
+    dojo/topic
+    
+      
+        --> if publisher and subscripber dont know each other , but if want to provide
+            commn b/w them.
+    
+    
+   ----------------------------------------------------------------
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+  
+  
+   

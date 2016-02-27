@@ -36,12 +36,12 @@ define([ './counter/HitCounter',
 			// Declarative widget usage
 			//--------------------------------------------
 			
-			parser.parse();
+			//parser.parse();
 			
 			setTimeout(function() {
-				var c=registry.byId('c1').get('count');
-				console.log(c);
-				registry.byId('c1').destroy();
+				//var c=registry.byId('c1').get('count');
+				//console.log(c);
+				//registry.byId('c1').destroy();
 			}, 10000);
 			
 			

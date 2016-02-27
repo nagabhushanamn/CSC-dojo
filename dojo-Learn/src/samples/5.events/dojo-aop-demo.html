@@ -5,28 +5,14 @@
 <title></title>
 <link href="../../css/bootstrap.css" rel="stylesheet">
 <link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css" rel="stylesheet">
-<link href="app/counter/css/counter-style.css" rel="stylesheet">
 </head>
 <body class="claro">
 
 	<div class="container">
-		<div class="page-header">dojo- widgets</div>
+		<div class="page-header">dojo- Events ( dojo/aspect )</div>
 		<span class="badge">see console</span>	
 		<hr/>
-		<div id="counterBox">
-			<div id="c1" data-dojo-type="app.counter.HitCounter" data-dojo-props="count:100"></div>
-		</div>
-		<div id="dialog" data-dojo-type="app.HelloDialog"></div>
-	</div>
-	
-	<hr/>
-	
-	<div class="container">
-		<hr/>
-		<div data-dojo-type="app.loan.LoanInput"></div>
-		<hr/>
-		Monthly Payment : <span class="badge">0</span>
-	</div>
+	</div>	
 
 	<script type="text/javascript">
 		var dojoConfig={
@@ -38,8 +24,7 @@
 				          {name:'dijit',location:'../../dojo-release1.10.4/dijit'},
 				          {name:'app',location:'app'}
 				          ],
-				tlmSiblingOfDojo:false,
-				parseOnLoad:true
+				tlmSiblingOfDojo:false          
 		};
 	</script>
 	
@@ -47,7 +32,7 @@
 	<script type="text/javascript" src="../../dojo-release1.10.4/dojo/dojo.js"></script>
 	
 	<script type="text/javascript">
-	require(['app'])
+	require(['app/dojo-aop-demo'])
 	</script>
 	
 	
