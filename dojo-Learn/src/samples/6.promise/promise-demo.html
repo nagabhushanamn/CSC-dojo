@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css"
+	rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- Promise/Deferred</div>
+		<span class="badge">see console</span>
+		<hr />
+
+		<button id="b1" class="btn btn-primary">GET PiZAA</button>
+
+	</div>
+
+	<script type="text/javascript">
+		var dojoConfig = {
+			async : true,
+			//isDebug :true,
+			baseUrl : '.',
+			packages : [ {
+				name : 'dojo',
+				location : '../../dojo-release1.10.4/dojo'
+			}, {
+				name : 'dijit',
+				location : '../../dojo-release1.10.4/dijit'
+			}, {
+				name : 'app',
+				location : 'app'
+			} ],
+			tlmSiblingOfDojo : false
+		};
+	</script>
+
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript"
+		src="../../dojo-release1.10.4/dojo/dojo.js"></script>
+
+	<script type="text/javascript">
+		require([ 'dojo/dom', 'dojo/on','dojo/Deferred','dojo/promise/all','dojo/promise/first' ], function(dom, on,Deferred,all,first) {
+
+			on(dom.byId('b1'), 'click', function() {
+				
+				// customer
+				
+				//console.log('Requesting PIZA>>>>');
+				
+				/* var promise=pizaaShop.getPizaa();	
+				promise.then(function(result){
+					console.log("Got ..."+result +" Yummy....");
+				},function(reason){
+					console.log("ooops..."+reason +" sad....");
+				},function(progress){
+					console.log('update :'+progress);
+				});
+			
+				console.log('customer continue other work....');
+			
+				setInterval(function() {
+					promise.cancel('I CANT WAIT NO MORE>>>');
+				}, 6000);  */
+				
+				//---------------------------------------------------
+					
+				var pizaaPromise=pizaaShop.getPizaa();
+				var kfcPromise=kfc.getChiza();
+				
+				console.log('got promises...');
+				
+				
+				first([pizaaPromise,kfcPromise])
+				.then(function(results){
+					console.log("Got ..."+results +" Yummy....");
+				},function(reason){
+					console.log("ooops..."+reason +" sad....");
+				},function(progress){
+					console.log('update :'+progress);
+				});
+				
+				console.log('customer continue other work....');
+
+			});
+
+			//---------------------------------------------------------
+
+			var pizaaShop = {
+				getPizaa : function() {
+					var def=new Deferred(function(cancelReason) {
+						console.log('cancel reason : '+cancelReason);
+					});
+					setTimeout(function() {
+						console.log('PIZAA SHOP resolving...');
+						def.resolve('PIZAAAAAAAAAAA');
+						//def.reject('SORRRRRRRRRRRY');
+					}, 10000);
+					
+					/* 
+					setTimeout(function() {
+						def.progress('ON THE WAY>>>>>>');
+					}, 5000); */
+					
+					return def.promise;
+				}
+			};
+
+			
+			var kfc = {
+					getChiza : function() {
+						var def=new Deferred(function(cancelReason) {
+							console.log('cancel reason : '+cancelReason);
+						});
+						setTimeout(function() {
+							console.log('KFC SHOP resolving...');
+							def.resolve('CHIZA>>>');
+							//def.reject('SORRRRRRRRRRRY');
+						}, 5000);
+						
+						/* setTimeout(function() {
+							def.progress('ON THE WAY>>>>>>');
+						}, 5000); */
+						
+						return def.promise;
+					}
+				};
+
+			
+		});
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

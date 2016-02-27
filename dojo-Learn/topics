@@ -82,59 +82,7 @@
    Aspect Oriented Programming
    ---------------------------
    
-   // module-1
-   
-   function f1(){
-   
-    // loging..
-    // security..
-    // start progress-bar 
-   
-   	// logic-1
-   
-     // stop progress-bar
-      
-   }
-    function f2(){
-   
-    // loging..
-    // security..
-    // start progress-bar 
-   
-   	// logic-2
-   
-     // stop progress-bar
-      
-   }
-   
-     // module-2
-   
-   function f3(){
-   
-    // loging..
-    // security..
-    // start progress-bar 
-   
-   	// logic-1
-   
-     // stop progress-bar
-      
-   }
-    function f4(){
-   
-    // loging..
-    // security..
-    // start progress-bar 
-   
-   	// logic-2
-   
-     // stop progress-bar
-      
-   }
-   
-   
-   
-   
+
    
    2 problems
    
@@ -187,7 +135,54 @@
    
    
    
+    ====================================================  
+    
+    
+    
+    6. dojo - Promise API
    
+   
+       use :
+       
+          executing func asynchronously.
+    
+    
+       how to impleemnt in dojo ?
+       
+       dojo/promise  ( abstract )
+       
+       dojo/Deferred
+       dojo/promise/all
+       dojo/promise/first
+    
+    
+    
+    ====================================================  
+    
+    
+    7. dojo - AJAX  ( Server-Side Communication )
+    
+    
+    dojo/request
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
    
    
    

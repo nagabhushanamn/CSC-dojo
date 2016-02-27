@@ -7,10 +7,12 @@ define([ './counter/HitCounter',
          'dojo/on',
          'dojo/parser' ,
          'dijit/registry',
+         'dojo/ready',
+         'dojo/aspect',
          './loan/LoanInput',
          'dojo/domReady!'],
          
-	    function(HitCounter, dom,on,parser,registry) {
+	    function(HitCounter, dom,on,parser,registry,ready,aspect) {
 			
 		
 			// Programmatic widget usage
@@ -45,6 +47,15 @@ define([ './counter/HitCounter',
 				//console.log(c);
 				//registry.byId('c1').destroy();
 			//}, 10000);
-				
+			
+	       //--------------------------------------------
+	
+			ready(function(){
+				var loanWidget=registry.byId('loan');
+				aspect.after(loanWidget,'calculate',function(){
+					dom.byId('mpSpan').innerHTML=loanWidget.monthlyPayment.toFixed(2);
+				});
+			});
+	
 		
 	});

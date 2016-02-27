@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css"
+	rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- AJAX ( dojo/request )</div>
+		<span class="badge">see console</span>
+		<hr />
+
+		<button id="b1" class="btn btn-primary"> AJAX - Req</button>
+		
+		<hr/>
+		
+		<form name="productForm" id="productForm">
+		
+			<div class="row">
+			
+				<div class="col-md-4">
+				
+					<div class="form-group">
+						<label>Name:</label>
+						<input type="text" name="name" class="form-control">
+					</div>
+					<div class="form-group">
+						<label>Price:</label>
+						<input type="number" name="price" class="form-control">
+					</div>
+					
+					<div class="form-group">
+						<label>Desc:</label>
+						<textarea rows="5" cols="35" name="description" class="form-control"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</div>
+			
+			</div>
+		
+		</form>
+		
+
+	</div>
+
+	<script type="text/javascript">
+		var dojoConfig = {
+			async : true,
+			//isDebug :true,
+			baseUrl : '.',
+			packages : [ {
+				name : 'dojo',
+				location : '../../dojo-release1.10.4/dojo'
+			}, {
+				name : 'dijit',
+				location : '../../dojo-release1.10.4/dijit'
+			}, {
+				name : 'app',
+				location : 'app'
+			} ],
+			tlmSiblingOfDojo : false
+		};
+	</script>
+
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript"
+		src="../../dojo-release1.10.4/dojo/dojo.js"></script>
+
+	<script type="text/javascript">
+		require([ 'dojo/dom',
+		          'dojo/on',
+		          'dojo/request',
+		          'dojo/dom-form'], 
+		          
+		          function(dom, on,request,domForm) {
+
+					on(dom.byId('b1'), 'click', function() {
+		
+						// AJAX Request...
+						//var url = "info.txt";
+						//var url = "products.xml";
+						var url="products.json";
+					
+						var promise = request(url,{handleAs:'json',query:{type:'elec'},preventCache:true});
+						promise.then(function(result) {
+							
+							//console.log(result);
+							
+							// IF XML
+							//var xmlDoc=result;
+							//var products=xmlDoc.getElementsByTagName('product');
+							
+							// IF JSON
+							var products=result;
+							products.forEach(function(product,i){
+								console.log(product);
+							});
+							
+							
+							
+						}, function(reason) {
+							console.log(reason);
+						});
+		
+					})
+					
+					
+					
+					on(dom.byId('productForm'),'submit',function(event){
+						
+						// Read Form data
+						var product=domForm.toObject('productForm');
+						console.log(product);
+						
+						event.preventDefault();
+						
+						request('products',{method:'POST',data:product});
+						
+					})
+		
+				});
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+[
+	{
+		"name": "Laptop",
+		"price": 2000,
+		"descriptopn": "New Mode"
+	},
+
+	{
+		"name": "Mobile",
+		"price": 1000,
+		"descriptopn": "New Mode"
+	}
+]

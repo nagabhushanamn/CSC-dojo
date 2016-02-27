@@ -71,7 +71,7 @@ define(["dijit/_WidgetBase",
 			
 			// way-1
 			
-			//this.emit('loan-event',this.monthlyPayment.toFixed(2));
+			this.emit('loan-event',this.monthlyPayment.toFixed(2));
 			
 			// way-2
 			// topic.publish('loan-topic',this.monthlyPayment.toFixed(2));
