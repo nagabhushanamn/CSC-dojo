@@ -4,12 +4,14 @@
 
 define([ './counter/HitCounter',
          'dojo/dom' ,
+         'dojo/on',
          'dojo/parser' ,
          'dijit/registry',
-         './loan/LoanInput'],
+         './loan/LoanInput',
+         'dojo/domReady!'],
          
-	    function(HitCounter, dom,parser,registry) {
-	
+	    function(HitCounter, dom,on,parser,registry) {
+			
 		
 			// Programmatic widget usage
 			//----------------------------------------------
@@ -38,12 +40,11 @@ define([ './counter/HitCounter',
 			
 			//parser.parse();
 			
-			setTimeout(function() {
+			//setTimeout(function() {
 				//var c=registry.byId('c1').get('count');
 				//console.log(c);
 				//registry.byId('c1').destroy();
-			}, 10000);
-			
-			
+			//}, 10000);
+				
 		
 	});

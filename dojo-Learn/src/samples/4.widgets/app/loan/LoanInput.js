@@ -8,10 +8,12 @@ define(["dijit/_WidgetBase",
         "dijit/form/CurrencyTextBox",
         "dijit/form/NumberSpinner",
         "dijit/form/ComboBox",
-        "dojo/text!./template/LoanInput.html"],
-        function(_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, CurrencyTextBox, NumberSpinner, ComboBox,template) {
+        "dojo/text!./template/LoanInput.html",
+        'dojo/Evented',
+        "dojo/topic"],
+        function(_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, CurrencyTextBox, NumberSpinner, ComboBox,template,Evented,topic) {
 
-		dojo.declare("app.loan.LoanInput", [_WidgetBase,_TemplatedMixin, _WidgetsInTemplateMixin], {
+		dojo.declare("app.loan.LoanInput", [_WidgetBase,_TemplatedMixin, _WidgetsInTemplateMixin,Evented], {
 
 		// Path to the template
 		templateString : template,
@@ -66,6 +68,15 @@ define(["dijit/_WidgetBase",
 			}
 			
 			console.log(this.monthlyPayment.toFixed(2));
+			
+			// way-1
+			
+			//this.emit('loan-event',this.monthlyPayment.toFixed(2));
+			
+			// way-2
+			// topic.publish('loan-topic',this.monthlyPayment.toFixed(2));
+			
+			
 		}
 	});
 
