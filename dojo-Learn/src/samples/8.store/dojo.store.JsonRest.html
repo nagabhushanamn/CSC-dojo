@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css"
+	rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- dojo/store/Memory</div>
+		<span class="badge">see console</span>
+		<hr />
+
+
+	</div>
+
+	<script type="text/javascript">
+		var dojoConfig = {
+			async : true,
+			//isDebug :true,
+			baseUrl : '.',
+			packages : [ {
+				name : 'dojo',
+				location : '../../dojo-release1.10.4/dojo'
+			}, {
+				name : 'dijit',
+				location : '../../dojo-release1.10.4/dijit'
+			}, {
+				name : 'app',
+				location : 'app'
+			} ],
+			tlmSiblingOfDojo : false
+		};
+	</script>
+
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript"
+		src="../../dojo-release1.10.4/dojo/dojo.js"></script>
+
+	<script type="text/javascript">
+		
+	require(['dojo/store/JsonRest'],function(JsonRest){
+		
+		var url="http://localhost:3000/api/products";
+		var store=new JsonRest({target:url});
+		
+		//----------------------------------------
+		
+		//store.get('56d28634030b9bf3161b36fe')
+		//.then(function(product){console.log(product)});
+		
+		
+		//var newProd={name:'New One',price:200,make:Date.now(),description:'New...',color:'grey'};
+		//store.add(newProd);	
+		
+		
+		//var prod={id:"56d28634030b9bf3161b36fe",name:'New One',price:20,make:Date.now(),description:'New...',color:'grey'};
+		//store.put(prod);
+		
+		
+		store.remove("56d28634030b9bf3161b36fe");
+		
+		store.query()
+		.then(function(products){
+			products.forEach(function(product){
+				console.log(product);
+			});
+		});
+		
+	});	
+	
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

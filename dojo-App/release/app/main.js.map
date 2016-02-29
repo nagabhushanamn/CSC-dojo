@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"main.js",
+"lineCount":2,
+"mappings":"A;AAIAA,MAAA,qDAEE,QAAA,CAASC,CAAT,CAAqBC,CAArB,CAAyBC,CAAzB,MAEC,CACAC,EAHD,CAGc,IAAIH,CAEjBG,EAAAC,KAAA,EAEAF,EAAA,CAAGD,CAAAI,KAAA,YAAH,SAAgC,QAAA,GAE/BF,CAAAC,KAAA,EAEAE,WAAA,CAAW,QAAA,GACVH,CAAAI,KAAA,EADU,CAAX,KAJ+B,CAAhC,CAPD,CAFF;",
+"sources":["main.js.uncompressed.js"],
+"names":["define","HelloDialog","dom","on","dialog","show","byId","setTimeout","hide"]
+}

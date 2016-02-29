@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css"
+	rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- dojo/store/Memory</div>
+		<span class="badge">see console</span>
+		<hr />
+
+
+	</div>
+
+	<script type="text/javascript">
+		var dojoConfig = {
+			async : true,
+			//isDebug :true,
+			baseUrl : '.',
+			packages : [ {
+				name : 'dojo',
+				location : '../../dojo-release1.10.4/dojo'
+			}, {
+				name : 'dijit',
+				location : '../../dojo-release1.10.4/dijit'
+			}, {
+				name : 'app',
+				location : 'app'
+			} ],
+			tlmSiblingOfDojo : false
+		};
+	</script>
+
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript"
+		src="../../dojo-release1.10.4/dojo/dojo.js"></script>
+
+	<script type="text/javascript">
+		
+	require(['dojo/store/Memory'],function(Memory){
+		
+	
+		var products=[
+		          {pid:1,name:'Laptop',price:9000},
+		          {pid:2,name:'Laptop',price:5000},
+		          {pid:3,name:'Mobile',price:4000}
+		          ];
+		var store=new Memory({data:products,idProperty:'pid'});
+		
+		//----------------------------------------
+		
+		/* 
+		var product=store.get(2);
+		console.log(product); 
+		*/
+		
+		/*
+		
+		//store.query({name:'Laptop'})
+		 store.query(function(prod){
+			return prod.price>4000;
+		})
+		.forEach(function(product){
+			console.log(product);
+		}); 
+		
+		
+		
+		store.query({name:'Laptop'},{sort:[{attribute:'price'}]})
+		.forEach(function(product){
+			console.log(product);
+		}); 
+		
+		*/
+		
+		var newProd={pid:4,name:'New One',price:4000};
+		store.add(newProd);
+		
+		store.put({pid:4,name:'New One',price:0});
+		
+		store.remove(4);
+		
+    	store.query()
+		.forEach(function(product){
+			console.log(product);
+		}); 
+		
+		
+	});
+	
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

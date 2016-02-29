@@ -2,12 +2,16 @@
 	{
 		"name": "Laptop",
 		"price": 2000,
-		"descriptopn": "New Mode"
+		"make": 1456637358899,
+		"color": "black",
+		"descriptopn": "New Model"
 	},
 
 	{
 		"name": "Mobile",
 		"price": 1000,
-		"descriptopn": "New Mode"
+		"make": 1456637358899,
+		"color": "white",
+		"descriptopn": "New Model"
 	}
 ]

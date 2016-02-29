@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="./css/bootstrap.css" rel="stylesheet">
+<link href="./dijit/themes/claro/claro.css" rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- HelloWorld</div>
+		
+		<button id="showBtn" class="btn btn-primary">Say Hello</button>
+		
+	</div>
+
+	<script type="text/javascript">
+		var dojoConfig={
+				async   :true,
+				//isDebug :true,
+				baseUrl :'.',
+				packages:[
+				          {name:'dojo',location:'dojo'},
+				          {name:'dijit',location:'dijit'},
+				          {name:'app',location:'app'}
+				          ],
+				tlmSiblingOfDojo:false          
+		};
+	</script>
+	
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript" src="dojo/dojo.js"></script>
+	
+	<script type="text/javascript">
+	require(['app'])
+	</script>
+	
+	
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

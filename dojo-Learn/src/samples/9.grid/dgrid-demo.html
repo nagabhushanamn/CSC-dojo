@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css" rel="stylesheet">
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../dgrid/css/dgrid.css" rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- dgrid</div>
+		<span class="badge">see console</span>
+		<hr />
+
+		<div id="grid">
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		var dojoConfig = {
+			async : true,
+			//isDebug :true,
+			baseUrl : '.',
+			packages : [ {
+				name : 'dojo',
+				location : '../../dojo-release1.10.4/dojo'
+			}, {
+				name : 'dijit',
+				location : '../../dojo-release1.10.4/dijit'
+			}, {
+				name : 'app',
+				location : 'app'
+			} ,{
+				name:'dgrid',
+				location:'../../dgrid'
+			},
+			{
+				name:'dstore',
+				location:'../../dstore'
+			}],
+			tlmSiblingOfDojo : false
+		};
+	</script>
+
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript"
+		src="../../dojo-release1.10.4/dojo/dojo.js"></script>
+
+	<script type="text/javascript">
+		
+	require(['dojo',
+	         'dojo/store/Memory',
+	         'dgrid/Grid',
+	         'dgrid/Selection',
+	         'dgrid/Keyboard',
+	         'dojo/domReady!'],function(dojo,Memory,Grid,Selection,Keyboard){
+		
+	
+		var products=[
+		          {pid:1,name:'Laptop',price:9000},
+		          {pid:2,name:'Laptop',price:5000},
+		          {pid:3,name:'Mobile',price:4000}
+		          ];
+		
+		var store=new Memory({data:products,idProperty:'pid'});
+		
+		
+		var columns={
+			name:'Name',
+			price:'Price'
+		};
+		
+		//var grid=new Grid({columns:columns},"gridContainer");
+		//grid.renderArray(products);
+		
+		var CustomGrid=dojo.declare([Grid,Selection,Keyboard],{
+			selectionMode:'single',
+			cellNavigation:false
+			
+		});
+		var grid= new CustomGrid({columns:columns},"gridContainer");
+		grid.renderArray(products);
+		
+		grid.on('dgrid-select',function(event){
+			console.log('Row selected '+event.rows[0].data.name);
+		});
+		grid.on('dgrid-deselect',function(event){
+			console.log('Row deselected '+event.rows[0].data.name);
+		});
+		
+		
+		//------------------------------------------------------------
+		
+	});
+	
+	
+
+	require(['dojo',
+	         'dstore/RequestMemory',
+	         'dgrid/OnDemandGrid',
+	         'dgrid/extensions/Pagination',
+	         'dgrid/Editor'
+	     ], function (dojo,RequestMemory, OnDemandGrid,Pagination,Editor) {
+	      
+		     var url="http://localhost:3000/api/products"
+		     var store=new RequestMemory({ target: url });
+		     
+	    	var columns= [
+		                 { field: 'name', label: 'Name' },
+		                 { field: 'price', label: 'Price',editor: 'text',editOn: 'dblclick' ,autoSave:true},
+		                 { field: 'make', label: 'Make' },
+		                 { field: 'color', label: 'Color' },
+		                 { field: 'description', label: 'Description' }
+		             ]
+		     
+	    	
+	        var CustomGrid=dojo.declare([OnDemandGrid,Pagination,Editor],{
+	        	
+	        });
+	    	var grid=new CustomGrid({
+	    		collection:store,
+	    		columns:columns,
+	    		pagingLinks:1,
+	    		pagingTextBox:true,
+	    		firstAndLastArrows:true,
+	    		pageSizeOptions:[1,2,3]
+	    		
+	    	},'grid');
+	      
+	         grid.startup();
+	         
+	        
+	         
+	     });
+	
+	
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

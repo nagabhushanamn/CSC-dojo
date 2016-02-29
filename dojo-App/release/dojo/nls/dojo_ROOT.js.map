@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"dojo_ROOT.js",
+"lineCount":3,
+"mappings":"A;AAAAA,MAAA,uBACA,mBADA,wBACiD,OADjD,qDACiI,OADjI,yKAGA,kBAHA,4DAGwF,OAHxF,qDAGwK,OAHxK;;",
+"sources":["dojo_ROOT.js.uncompressed.js"],
+"names":["define"]
+}

@@ -4,14 +4,14 @@
 
 define([ 'dojo/dom',
          'dojo/on',
-         'dojo/_base/lang',
          'dojo/query',
+         'dojo/_base/lang',
          'dojo/dom-construct' ], 
          
          function(dom,
         		  on,
-        		  lang,
         		  query,
+        		  lang,
         		  domConstruct) {
 
 	
@@ -64,17 +64,17 @@ define([ 'dojo/dom',
 			
 			// Event Delegation ( adding event-listeners for the elements which are get placed in future )
 			
-			//	var box2=dom.byId('box2')
-			//	
-			//	on(box2,'.hit:click',function(event){
-			//		console.log('Hit btn handler...');
-			//	});
-			//	
-			//	
-			//	setTimeout(function() {
-			//		var btn=domConstruct.create('button',{innerHTML:'New Hit',class:"hit btn btn-danger"});
-			//		box2.appendChild(btn);
-			//	}, 10000);
+				var box2=dom.byId('box2')
+				
+				on(box2,'.hit:click',function(event){
+					console.log('Hit btn handler...');
+				});
+				
+				
+				setTimeout(function() {
+					var btn=domConstruct.create('button',{innerHTML:'New Hit',class:"hit btn btn-danger"});
+					box2.appendChild(btn);
+				}, 10000);
 			
 			
 			//-------------------------------------------------------------------

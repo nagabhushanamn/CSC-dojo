@@ -1,0 +1,23 @@
+{
+  "name": "WebApp",
+  "authors": [
+    "nagabhushanam <nagabhushanamn@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.3",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.1"
+  }
+}

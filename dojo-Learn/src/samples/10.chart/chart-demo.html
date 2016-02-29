@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../../dojo-release1.10.4/dijit/themes/claro/claro.css" rel="stylesheet">
+<link href="../../css/bootstrap.css" rel="stylesheet">
+<link href="../../dgrid/css/dgrid.css" rel="stylesheet">
+</head>
+<body class="claro">
+
+	<div class="container">
+		<div class="page-header">dojo- dgrid</div>
+		<span class="badge">see console</span>
+		<hr />
+
+		<div id="chart">
+		
+		<!-- create the chart -->
+			<div
+			    data-dojo-type="dojox/charting/widget/Chart"
+			    data-dojo-props="theme:dojox.charting.themes.Claro" id="viewsChart" style="width: 550px; height: 550px;">
+			
+			    <!-- Pie Chart: add the plot -->
+			    <div class="plot" name="default" type="Pie" radius="200" fontColor="#000" labelOffset="-20"></div>
+			
+			    <!-- pieData is the data source -->
+			    <div class="series" name="Last Week&#x27;s Visits" array="chartData"></div>
+			    
+			</div>
+			
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		var dojoConfig = {
+			async : true,
+			//isDebug :true,
+			baseUrl : '.',
+			packages : [ {
+				name : 'dojo',
+				location : '../../dojo-release1.10.4/dojo'
+			}, {
+				name : 'dijit',
+				location : '../../dojo-release1.10.4/dijit'
+			}, {
+				name : 'app',
+				location : 'app'
+			} ,{
+				name:'dojox',
+				location:'../../dojo-release1.10.4/dojox'
+			}],
+			tlmSiblingOfDojo : false,
+			parseOnLoad:true,
+			
+		};
+	</script>
+
+	<!-- 	dojo AMD Loader -->
+	<script type="text/javascript"
+		src="../../dojo-release1.10.4/dojo/dojo.js"></script>
+		
+	<script type="text/javascript">
+	var chartData = [
+	             { x: 1, y: 19021 },
+	             { x: 1, y: 12837 },
+	             { x: 1, y: 12378 },
+	             { x: 1, y: 21882 },
+	             { x: 1, y: 17654 },
+	             { x: 1, y: 15833 },
+	             { x: 1, y: 16122 }
+	         ];
+	</script>	
+
+	<script type="text/javascript">
+	require([
+	         
+		//Require the widget parser
+		"dojo/parser",
+		
+		 // Require the basic 2d chart resource
+		"dojox/charting/widget/Chart",
+		
+		// Require the theme of our choosing
+		"dojox/charting/themes/Claro",
+		
+		// Charting plugins:
+		
+		// 	Require the Pie type of Plot
+		"dojox/charting/plot2d/Pie"
+
+
+	    ], function(Chart, theme){
+	        // ....
+	    });
+	</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

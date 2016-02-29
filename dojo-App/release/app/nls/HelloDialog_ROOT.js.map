@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"HelloDialog_ROOT.js",
+"lineCount":3,
+"mappings":"A;AAAAA,MAAA,6BACA,mBADA,wBACiD,OADjD,qDACiI,OADjI,yKAGA,kBAHA,4DAGwF,OAHxF,qDAGwK,OAHxK;;",
+"sources":["HelloDialog_ROOT.js.uncompressed.js"],
+"names":["define"]
+}

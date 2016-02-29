@@ -166,11 +166,28 @@
     dojo/request
     
     
+     
+    ====================================================  
     
     
     
+    8. DOJO - data-stores
+    ---------------------	
+    
+    dojo/store
     
     
+         dojo/store/Memory    ( client-sid store    )
+         dojo/store/JsonRest  ( serviser-side store )
+    
+    
+    
+    --------------------------------------------
+    
+    9. dojo - Grid
+      ------------
+      
+      
     
     
     
